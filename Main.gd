@@ -13,6 +13,7 @@ export (PackedScene) var Enemy
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print("ASSSSS")
 	startLevel()
 
 #	var enemy = Enemy.instance()
