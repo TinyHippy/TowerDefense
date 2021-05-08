@@ -19,6 +19,10 @@ config/name="Unnamed Tower Defense"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Global.gd"
+
 [display]
 
 window/dpi/allow_hidpi=true
