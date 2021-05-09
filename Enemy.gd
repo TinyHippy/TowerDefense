@@ -4,6 +4,9 @@ extends Area2D
 export var health = 100
 export var armor = 0
 export var speed = 150
+export var path = "GroundPath"
+export var spawnInterval = 5.0
+
 var move_direction = 0
 onready var path_follow = get_parent()
 
