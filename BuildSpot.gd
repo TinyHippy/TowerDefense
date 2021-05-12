@@ -1,9 +1,7 @@
 extends TextureButton
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var built = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -27,3 +25,16 @@ func _on_HideTimer_timeout():
 	$TowerABuild.hide()
 	$TowerBBuild.hide()
 	$HideTimer.stop()
+
+
+func _on_TowerABuild_pressed():
+	var scene  = Global.towerScenes["TowerA"]
+	var enemyInst = scene.instance()
+	$Centre.add_child(enemyInst)
+
+
+func _on_TowerBBuild_pressed():
+	pass
+#	var scene  = Global.towerScenes["TowerB"]
+#	var enemyInst = scene.instance()
+#	$Centre.add_child(enemyInst)

@@ -41,6 +41,11 @@ __meta__ = {
 }
 
 [node name="HideTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 3.0
+
+[node name="Centre" type="Node2D" parent="."]
+position = Vector2( 32, 32 )
 [connection signal="pressed" from="." to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="TowerABuild" to="." method="_on_TowerABuild_pressed"]
+[connection signal="pressed" from="TowerBBuild" to="." method="_on_TowerBBuild_pressed"]
 [connection signal="timeout" from="HideTimer" to="." method="_on_HideTimer_timeout"]
