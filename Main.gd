@@ -1,8 +1,29 @@
 extends Node
 
-var playerHealth = 99
+var global
+
+
+
+#Time Variables
 var time = 0
-var nextWave = 30
+var timeLabel = 0
+var nextWave = 5
+var spawnTime = 0
+var building = false
+
+#Level Variables
+var levelName = ""
+var level = null
+
+#Wave Variables and arrays
+var maxEnemies = 12
+var waves = [] #an array of all the different waves data 
+var waveIndex = 0
+var wave = {}
+
+const WAIT = 0
+const ACTIVE = 1
+const FINISHED = 2
 
 export (PackedScene) var Enemy
 
@@ -13,32 +34,111 @@ export (PackedScene) var Enemy
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	global = Global
 	startLevel()
-
-#	var enemy = Enemy.instance()
-#	$LevelOne/EnemyPath/EnemySpawn.add_child(enemy)
 	
-#	var dir = $LevelOne/EnemyPath/EnemySpawn
-#	enemy.position = $LevelOne/EnemyPath/EnemySpawn.position
-#	enemy.linear_velocity = $LevelOne/EnemyPath
-
+	# Loads level if level is blank must be levelOne
+	if (levelName == ""):
+		levelName = "level-01"
+	var scene = ResourceLoader.load("res://"+levelName+".tscn")
+	level = scene.instance()
+	add_child(level)
+	move_child(level,0)
+	
+	# Load wave data
+	var jsonFile = File.new()
+	jsonFile.open("res://"+ levelName + "-waves.json", File.READ)
+	var text = jsonFile.get_as_text()	
+	var d = parse_json(text)
+	if !(d):
+		print("Failed to parse wave json file")
+	waves = d["waves"]
+	initWave(0)
+	set_process(true)
+	set_process_input(true)
+		
 	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+
+
+func _process(delta):
+	waveSpawner(delta)
+
+
 
 func startLevel():
-	playerHealth = 100
+	$"/root/Global".playerHealth = 100
 	$LevelTimer.start()
 	$WaveTimer.start()
-	$HUD/Health.text = str(playerHealth)
+	$HUD/Health.text = str($"/root/Global".playerHealth)
 
 func _on_LevelTimer_timeout():
-	time += 1
-	$HUD/LevelTimer.text = str(time)
+	timeLabel += 1
+	$HUD/LevelTimer.text = str(timeLabel)
 
 
 func _on_WaveTimer_timeout():
-	nextWave -= 1
-	$HUD/NextWave/WaveTime.text = str(nextWave)
+	
+	if(nextWave == 0):
+		nextWave = 30
+	else: 
+		nextWave -= 1
+	$HUD/NextWave/WaveTime.text = str(int(nextWave))
+	
+
+func initWave(index):
+	waveIndex = index
+	wave = waves[index]
+	wave["count"] = wave["enemies"].size()
+	wave["state"] = WAIT
+	wave["index"] = 0
+
+	#print(wave["interval"])
+	
+	
+func startWave():
+	wave["state"] = ACTIVE
+	var enemy = wave["enemies"][wave["index"]]
+	var scene  = global.enemyScenes[enemy["type"]]
+	var enemyInst = scene.instance()
+	spawnTime = time + enemyInst.spawnInterval
+	
+
+
+func waveSpawner(delta):
+	time += delta
+	#print(time)
+	#print(nextWave)
+	#print(spawnTime)
+	if wave["state"] == ACTIVE:
+		#print("ACTIVE WAVE")
+		if time > spawnTime:
+			var enemy = wave["enemies"][wave["index"]]
+			var scene  = global.enemyScenes[enemy["type"]]
+			var enemyInst = scene.instance()
+			var path = PathFollow2D.new()
+
+			path.set_loop(false)
+			var pathName = enemyInst.path
+			#var pathDistance = level.get_node(pathName).curve.get_baked_length()
+			#print (pathName)
+			level.get_node("BuildTiles").get_node(pathName).add_child(path)
+			path.add_child(enemyInst)
+			if(wave["index"]+1) < wave["count"]:
+				wave["index"] += 1
+				spawnTime = time + enemyInst.spawnInterval
+			else:
+				wave["state"] = FINISHED
+				if(waveIndex+1) < waves.size():
+					initWave(waveIndex+1)
+	elif wave["state"] == WAIT:
+		#print("WAIT WAVE")
+		
+		if nextWave > 0:
+			pass
+		else:
+			startWave()
+	
+
+
+
