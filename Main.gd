@@ -2,15 +2,14 @@ extends Node
 
 var global
 
-#Player variables
-var playerHealth = 99
+
 
 #Time Variables
 var time = 0
 var timeLabel = 0
 var nextWave = 5
 var spawnTime = 0
-
+var building = false
 
 #Level Variables
 var levelName = ""
@@ -68,10 +67,10 @@ func _process(delta):
 
 
 func startLevel():
-	playerHealth = 100
+	$"/root/Global".playerHealth = 100
 	$LevelTimer.start()
 	$WaveTimer.start()
-	$HUD/Health.text = str(playerHealth)
+	$HUD/Health.text = str($"/root/Global".playerHealth)
 
 func _on_LevelTimer_timeout():
 	timeLabel += 1
@@ -94,7 +93,7 @@ func initWave(index):
 	wave["state"] = WAIT
 	wave["index"] = 0
 
-	print(wave["interval"])
+	#print(wave["interval"])
 	
 	
 func startWave():
@@ -110,7 +109,7 @@ func waveSpawner(delta):
 	time += delta
 	#print(time)
 	#print(nextWave)
-	print(spawnTime)
+	#print(spawnTime)
 	if wave["state"] == ACTIVE:
 		#print("ACTIVE WAVE")
 		if time > spawnTime:
@@ -118,10 +117,12 @@ func waveSpawner(delta):
 			var scene  = global.enemyScenes[enemy["type"]]
 			var enemyInst = scene.instance()
 			var path = PathFollow2D.new()
+
 			path.set_loop(false)
 			var pathName = enemyInst.path
+			#var pathDistance = level.get_node(pathName).curve.get_baked_length()
 			#print (pathName)
-			level.get_node(pathName).add_child(path)
+			level.get_node("BuildTiles").get_node(pathName).add_child(path)
 			path.add_child(enemyInst)
 			if(wave["index"]+1) < wave["count"]:
 				wave["index"] += 1
