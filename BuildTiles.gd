@@ -32,8 +32,8 @@ func _input(event):
 			buildSpot = global.buildNode
 			var newBuild = buildSpot.instance()
 			add_child(newBuild)
-			print("Node name: ", get_node("."))
-			print("Mouse click/unclick at:", event.position)
+#			print("Node name: ", get_node("."))
+#			print("Mouse click/unclick at:", event.position)
 			worldPos = event.position
 			tilePos = world_to_map(worldPos)
 			tileId = get_cellv(tilePos)
@@ -43,7 +43,7 @@ func _input(event):
 				newBuild.position = map_to_world(tilePos)-(cell_size/4) #adjust for tile size to centre
 				newBuild.showAll()
 				global.building = true
-				print("Tile pos is: ", tilePos)
+#				print("Tile pos is: ", tilePos)
 	#			print("Tile id is: ", tileId)
 	#			print("Tile name is: ", tileName)
 	# if the mouse moves do mouse over logic
@@ -51,7 +51,7 @@ func _input(event):
 		currMouseOver = world_to_map(event.position)
 		if currMouseOver != lastMouseOver:
 			if get_cellv(currMouseOver) == BUILDABLE_TYPE and global.building == false:
-				print("Mouse Motion at: ", world_to_map(event.position))
+#				print("Mouse Motion at: ", world_to_map(event.position))
 				set_cellv(currMouseOver, MOUSE_OVER)
 				set_cellv(lastMouseOver, BUILDABLE_TYPE)
 				lastMouseOver = currMouseOver

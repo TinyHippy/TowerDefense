@@ -4,6 +4,7 @@ export var cost = 5
 export var attackSpeed = 1
 export var damage = 2.5
 export var towerRange = 4
+export var type = "A"
 var target = null;
 var inArea =  [];
 
