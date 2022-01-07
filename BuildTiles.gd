@@ -40,7 +40,9 @@ func _input(event):
 			tileName = get_node(".").get_tileset().tile_get_name(tileId)
 			#checking for click on buildable tile
 			if tileName == ACTIVE or tileName == BUILDABLE:
-				newBuild.position = map_to_world(tilePos)-(cell_size/4) #adjust for tile size to centre
+				var adjust = cell_size
+				adjust = adjust / Vector2(4,2)
+				newBuild.position = map_to_world(tilePos)-adjust #adjust for tile size to centre
 				newBuild.showAll()
 				global.building = true
 #				print("Tile pos is: ", tilePos)

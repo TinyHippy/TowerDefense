@@ -3,28 +3,68 @@
     {
       "id" : "1",
       "interval" : 5.0,
-      "enemies" : [
-        {
-            "type": "Enemy-a",
-            "interval": 2.0,
-            
-        },
-        {
-            "type": "Enemy-b",
-            "interval": 5.0,
-            
-        },
-        {
-            "type": "Enemy-a",
-            "interval": 2.0,
-            
-        },
-        {
-            "type": "Enemy-b",
-            "interval": 5.0,
-            
-        }
-      ],
+        "enemies": [
+            {
+                "type": "Enemy-a",
+                "interval": 1.0
+
+            },
+            {
+                "type": "Enemy-b",
+                "interval": 1.0
+
+            },
+            {
+                "type": "Enemy-a",
+                "interval": 1.0
+
+            },
+            {
+                "type": "Enemy-b",
+                "interval": 1.0
+
+            },
+            {
+                "type": "Enemy-a",
+                "interval": 1.0
+
+            },
+            {
+                "type": "Enemy-b",
+                "interval": 1.0
+
+            },
+            {
+                "type": "Enemy-a",
+                "interval": 1.0
+
+            },
+            {
+                "type": "Enemy-b",
+                "interval": 1.0
+
+            },
+            {
+                "type": "Enemy-a",
+                "interval": 1.0
+
+            },
+            {
+                "type": "Enemy-b",
+                "interval": 1.0
+
+            },
+            {
+                "type": "Enemy-a",
+                "interval": 1.0
+
+            },
+            {
+                "type": "Enemy-b",
+                "interval": 1.0
+
+            }
+        ],
       "count" : 4,
       "state" : 0
     },
