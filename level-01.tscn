@@ -28,7 +28,6 @@ tile_data = PoolIntArray( -917492, 0, 0, -917491, 0, 0, -851956, 0, 0, -851955, 
 mode = 1
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 128, 64 )
-cell_tile_origin = 1
 cell_y_sort = true
 centered_textures = true
 format = 1

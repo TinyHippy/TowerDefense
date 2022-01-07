@@ -37,15 +37,18 @@ func _input(event):
 			worldPos = event.position
 			tilePos = world_to_map(worldPos)
 			tileId = get_cellv(tilePos)
-			tileName = get_node(".").get_tileset().tile_get_name(tileId)
+			if tileId != -1:
+				tileName = get_node(".").get_tileset().tile_get_name(tileId)
 			#checking for click on buildable tile
-			if tileName == ACTIVE or tileName == BUILDABLE:
-				newBuild.position = map_to_world(tilePos)-(cell_size/4) #adjust for tile size to centre
-				newBuild.showAll()
-				global.building = true
-#				print("Tile pos is: ", tilePos)
-	#			print("Tile id is: ", tileId)
-	#			print("Tile name is: ", tileName)
+				if tileName == ACTIVE or tileName == BUILDABLE:
+					var adjust = cell_size
+					adjust = adjust / Vector2(4,2)
+					newBuild.position = map_to_world(tilePos)-adjust #adjust for tile size to centre
+					newBuild.showAll()
+					global.building = true
+	#				print("Tile pos is: ", tilePos)
+		#			print("Tile id is: ", tileId)
+		#			print("Tile name is: ", tileName)
 	# if the mouse moves do mouse over logic
 	elif event is InputEventMouseMotion:
 		currMouseOver = world_to_map(event.position)

@@ -70,572 +70,208 @@ curve = SubResource( 4 )
 [node name="BuildSpot" parent="." instance=ExtResource( 2 )]
 
 [node name="BuildSpot2" parent="." instance=ExtResource( 2 )]
-margin_top = 64.0
-margin_bottom = 128.0
 
 [node name="BuildSpot3" parent="." instance=ExtResource( 2 )]
-margin_left = 64.0
-margin_top = 64.0
-margin_right = 128.0
-margin_bottom = 128.0
 
 [node name="BuildSpot4" parent="." instance=ExtResource( 2 )]
-margin_left = 64.0
-margin_right = 128.0
 
 [node name="BuildSpot5" parent="." instance=ExtResource( 2 )]
-margin_left = 128.0
-margin_right = 192.0
 
 [node name="BuildSpot6" parent="." instance=ExtResource( 2 )]
-margin_left = 128.0
-margin_top = 64.0
-margin_right = 192.0
-margin_bottom = 128.0
 
 [node name="BuildSpot7" parent="." instance=ExtResource( 2 )]
-margin_left = 192.0
-margin_top = 64.0
-margin_right = 256.0
-margin_bottom = 128.0
 
 [node name="BuildSpot8" parent="." instance=ExtResource( 2 )]
-margin_left = 192.0
-margin_right = 256.0
 
 [node name="BuildSpot9" parent="." instance=ExtResource( 2 )]
-margin_left = 256.0
-margin_right = 320.0
 
 [node name="BuildSpot10" parent="." instance=ExtResource( 2 )]
-margin_left = 256.0
-margin_top = 64.0
-margin_right = 320.0
-margin_bottom = 128.0
 
 [node name="BuildSpot11" parent="." instance=ExtResource( 2 )]
-margin_left = 256.0
-margin_top = 128.0
-margin_right = 320.0
-margin_bottom = 192.0
 
 [node name="BuildSpot12" parent="." instance=ExtResource( 2 )]
-margin_left = 256.0
-margin_top = 192.0
-margin_right = 320.0
-margin_bottom = 256.0
 
 [node name="BuildSpot13" parent="." instance=ExtResource( 2 )]
-margin_left = 256.0
-margin_top = 256.0
-margin_right = 320.0
-margin_bottom = 320.0
 
 [node name="BuildSpot14" parent="." instance=ExtResource( 2 )]
-margin_left = 256.0
-margin_top = 320.0
-margin_right = 320.0
-margin_bottom = 384.0
 
 [node name="BuildSpot15" parent="." instance=ExtResource( 2 )]
-margin_left = 256.0
-margin_top = 384.0
-margin_right = 320.0
-margin_bottom = 448.0
 
 [node name="BuildSpot16" parent="." instance=ExtResource( 2 )]
-margin_left = 256.0
-margin_top = 448.0
-margin_right = 320.0
-margin_bottom = 512.0
 
 [node name="BuildSpot17" parent="." instance=ExtResource( 2 )]
-margin_left = 320.0
-margin_top = 448.0
-margin_right = 384.0
-margin_bottom = 512.0
 
 [node name="BuildSpot18" parent="." instance=ExtResource( 2 )]
-margin_left = 320.0
-margin_top = 384.0
-margin_right = 384.0
-margin_bottom = 448.0
 
 [node name="BuildSpot19" parent="." instance=ExtResource( 2 )]
-margin_left = 320.0
-margin_top = 320.0
-margin_right = 384.0
-margin_bottom = 384.0
 
 [node name="BuildSpot20" parent="." instance=ExtResource( 2 )]
-margin_left = 320.0
-margin_top = 256.0
-margin_right = 384.0
-margin_bottom = 320.0
 
 [node name="BuildSpot21" parent="." instance=ExtResource( 2 )]
-margin_left = 320.0
-margin_top = 192.0
-margin_right = 384.0
-margin_bottom = 256.0
 
 [node name="BuildSpot22" parent="." instance=ExtResource( 2 )]
-margin_left = 320.0
-margin_top = 128.0
-margin_right = 384.0
-margin_bottom = 192.0
 
 [node name="BuildSpot23" parent="." instance=ExtResource( 2 )]
-margin_left = 320.0
-margin_top = 64.0
-margin_right = 384.0
-margin_bottom = 128.0
 
 [node name="BuildSpot24" parent="." instance=ExtResource( 2 )]
-margin_left = 320.0
-margin_right = 384.0
 
 [node name="BuildSpot25" parent="." instance=ExtResource( 2 )]
-margin_left = 384.0
-margin_right = 448.0
 
 [node name="BuildSpot26" parent="." instance=ExtResource( 2 )]
-margin_left = 448.0
-margin_right = 512.0
 
 [node name="BuildSpot27" parent="." instance=ExtResource( 2 )]
-margin_left = 512.0
-margin_right = 576.0
 
 [node name="BuildSpot28" parent="." instance=ExtResource( 2 )]
-margin_left = 576.0
-margin_right = 640.0
 
 [node name="BuildSpot29" parent="." instance=ExtResource( 2 )]
-margin_left = 640.0
-margin_right = 704.0
 
 [node name="BuildSpot30" parent="." instance=ExtResource( 2 )]
-margin_left = 704.0
-margin_right = 768.0
 
 [node name="BuildSpot31" parent="." instance=ExtResource( 2 )]
-margin_left = 704.0
-margin_top = 64.0
-margin_right = 768.0
-margin_bottom = 128.0
 
 [node name="BuildSpot32" parent="." instance=ExtResource( 2 )]
-margin_left = 704.0
-margin_top = 128.0
-margin_right = 768.0
-margin_bottom = 192.0
 
 [node name="BuildSpot33" parent="." instance=ExtResource( 2 )]
-margin_left = 704.0
-margin_top = 192.0
-margin_right = 768.0
-margin_bottom = 256.0
 
 [node name="BuildSpot34" parent="." instance=ExtResource( 2 )]
-margin_left = 704.0
-margin_top = 256.0
-margin_right = 768.0
-margin_bottom = 320.0
 
 [node name="BuildSpot35" parent="." instance=ExtResource( 2 )]
-margin_left = 704.0
-margin_top = 320.0
-margin_right = 768.0
-margin_bottom = 384.0
 
 [node name="BuildSpot36" parent="." instance=ExtResource( 2 )]
-margin_left = 704.0
-margin_top = 384.0
-margin_right = 768.0
-margin_bottom = 448.0
 
 [node name="BuildSpot37" parent="." instance=ExtResource( 2 )]
-margin_left = 768.0
-margin_top = 384.0
-margin_right = 832.0
-margin_bottom = 448.0
 
 [node name="BuildSpot38" parent="." instance=ExtResource( 2 )]
-margin_left = 768.0
-margin_top = 320.0
-margin_right = 832.0
-margin_bottom = 384.0
 
 [node name="BuildSpot39" parent="." instance=ExtResource( 2 )]
-margin_left = 768.0
-margin_top = 256.0
-margin_right = 832.0
-margin_bottom = 320.0
 
 [node name="BuildSpot40" parent="." instance=ExtResource( 2 )]
-margin_left = 768.0
-margin_top = 192.0
-margin_right = 832.0
-margin_bottom = 256.0
 
 [node name="BuildSpot41" parent="." instance=ExtResource( 2 )]
-margin_left = 768.0
-margin_top = 128.0
-margin_right = 832.0
-margin_bottom = 192.0
 
 [node name="BuildSpot42" parent="." instance=ExtResource( 2 )]
-margin_left = 768.0
-margin_top = 64.0
-margin_right = 832.0
-margin_bottom = 128.0
 
 [node name="BuildSpot43" parent="." instance=ExtResource( 2 )]
-margin_left = 768.0
-margin_right = 832.0
 
 [node name="BuildSpot44" parent="." instance=ExtResource( 2 )]
-margin_left = 832.0
-margin_right = 896.0
 
 [node name="BuildSpot45" parent="." instance=ExtResource( 2 )]
-margin_left = 896.0
-margin_right = 960.0
 
 [node name="BuildSpot46" parent="." instance=ExtResource( 2 )]
-margin_left = 960.0
-margin_right = 1024.0
 
 [node name="BuildSpot47" parent="." instance=ExtResource( 2 )]
-margin_left = 960.0
-margin_top = 128.0
-margin_right = 1024.0
-margin_bottom = 192.0
 
 [node name="BuildSpot48" parent="." instance=ExtResource( 2 )]
-margin_left = 896.0
-margin_top = 128.0
-margin_right = 960.0
-margin_bottom = 192.0
 
 [node name="BuildSpot49" parent="." instance=ExtResource( 2 )]
-margin_left = 896.0
-margin_top = 192.0
-margin_right = 960.0
-margin_bottom = 256.0
 
 [node name="BuildSpot50" parent="." instance=ExtResource( 2 )]
-margin_left = 960.0
-margin_top = 192.0
-margin_right = 1024.0
-margin_bottom = 256.0
 
 [node name="BuildSpot51" parent="." instance=ExtResource( 2 )]
-margin_left = 896.0
-margin_top = 256.0
-margin_right = 960.0
-margin_bottom = 320.0
 
 [node name="BuildSpot52" parent="." instance=ExtResource( 2 )]
-margin_left = 960.0
-margin_top = 256.0
-margin_right = 1024.0
-margin_bottom = 320.0
 
 [node name="BuildSpot53" parent="." instance=ExtResource( 2 )]
-margin_left = 896.0
-margin_top = 320.0
-margin_right = 960.0
-margin_bottom = 384.0
 
 [node name="BuildSpot54" parent="." instance=ExtResource( 2 )]
-margin_left = 960.0
-margin_top = 320.0
-margin_right = 1024.0
-margin_bottom = 384.0
 
 [node name="BuildSpot55" parent="." instance=ExtResource( 2 )]
-margin_left = 896.0
-margin_top = 384.0
-margin_right = 960.0
-margin_bottom = 448.0
 
 [node name="BuildSpot56" parent="." instance=ExtResource( 2 )]
-margin_left = 960.0
-margin_top = 384.0
-margin_right = 1024.0
-margin_bottom = 448.0
 
 [node name="BuildSpot57" parent="." instance=ExtResource( 2 )]
-margin_left = 896.0
-margin_top = 448.0
-margin_right = 960.0
-margin_bottom = 512.0
 
 [node name="BuildSpot58" parent="." instance=ExtResource( 2 )]
-margin_left = 960.0
-margin_top = 448.0
-margin_right = 1024.0
-margin_bottom = 512.0
 
 [node name="BuildSpot59" parent="." instance=ExtResource( 2 )]
-margin_left = 960.0
-margin_top = 512.0
-margin_right = 1024.0
-margin_bottom = 576.0
 
 [node name="BuildSpot60" parent="." instance=ExtResource( 2 )]
-margin_left = 576.0
-margin_top = 448.0
-margin_right = 640.0
-margin_bottom = 512.0
 
 [node name="BuildSpot61" parent="." instance=ExtResource( 2 )]
-margin_left = 576.0
-margin_top = 384.0
-margin_right = 640.0
-margin_bottom = 448.0
 
 [node name="BuildSpot62" parent="." instance=ExtResource( 2 )]
-margin_left = 896.0
-margin_top = 512.0
-margin_right = 960.0
-margin_bottom = 576.0
 
 [node name="BuildSpot63" parent="." instance=ExtResource( 2 )]
-margin_left = 832.0
-margin_top = 512.0
-margin_right = 896.0
-margin_bottom = 576.0
 
 [node name="BuildSpot64" parent="." instance=ExtResource( 2 )]
-margin_left = 512.0
-margin_top = 128.0
-margin_right = 576.0
-margin_bottom = 192.0
 
 [node name="BuildSpot73" parent="." instance=ExtResource( 2 )]
-margin_left = 512.0
-margin_top = 192.0
-margin_right = 576.0
-margin_bottom = 256.0
 
 [node name="BuildSpot74" parent="." instance=ExtResource( 2 )]
-margin_left = 512.0
-margin_top = 256.0
-margin_right = 576.0
-margin_bottom = 320.0
 
 [node name="BuildSpot75" parent="." instance=ExtResource( 2 )]
-margin_left = 512.0
-margin_top = 320.0
-margin_right = 576.0
-margin_bottom = 384.0
 
 [node name="BuildSpot76" parent="." instance=ExtResource( 2 )]
-margin_left = 512.0
-margin_top = 384.0
-margin_right = 576.0
-margin_bottom = 448.0
 
 [node name="BuildSpot77" parent="." instance=ExtResource( 2 )]
-margin_left = 512.0
-margin_top = 448.0
-margin_right = 576.0
-margin_bottom = 512.0
 
 [node name="BuildSpot78" parent="." instance=ExtResource( 2 )]
-margin_left = 512.0
-margin_top = 512.0
-margin_right = 576.0
-margin_bottom = 576.0
 
 [node name="BuildSpot79" parent="." instance=ExtResource( 2 )]
-margin_left = 448.0
-margin_top = 512.0
-margin_right = 512.0
-margin_bottom = 576.0
 
 [node name="BuildSpot80" parent="." instance=ExtResource( 2 )]
-margin_left = 448.0
-margin_top = 448.0
-margin_right = 512.0
-margin_bottom = 512.0
 
 [node name="BuildSpot81" parent="." instance=ExtResource( 2 )]
-margin_left = 448.0
-margin_top = 384.0
-margin_right = 512.0
-margin_bottom = 448.0
 
 [node name="BuildSpot82" parent="." instance=ExtResource( 2 )]
-margin_left = 448.0
-margin_top = 320.0
-margin_right = 512.0
-margin_bottom = 384.0
 
 [node name="BuildSpot83" parent="." instance=ExtResource( 2 )]
-margin_left = 448.0
-margin_top = 256.0
-margin_right = 512.0
-margin_bottom = 320.0
 
 [node name="BuildSpot84" parent="." instance=ExtResource( 2 )]
-margin_left = 448.0
-margin_top = 192.0
-margin_right = 512.0
-margin_bottom = 256.0
 
 [node name="BuildSpot85" parent="." instance=ExtResource( 2 )]
-margin_left = 448.0
-margin_top = 128.0
-margin_right = 512.0
-margin_bottom = 192.0
 
 [node name="BuildSpot86" parent="." instance=ExtResource( 2 )]
-margin_left = 128.0
-margin_top = 512.0
-margin_right = 192.0
-margin_bottom = 576.0
 
 [node name="BuildSpot87" parent="." instance=ExtResource( 2 )]
-margin_left = 128.0
-margin_top = 448.0
-margin_right = 192.0
-margin_bottom = 512.0
 
 [node name="BuildSpot88" parent="." instance=ExtResource( 2 )]
-margin_left = 128.0
-margin_top = 384.0
-margin_right = 192.0
-margin_bottom = 448.0
 
 [node name="BuildSpot89" parent="." instance=ExtResource( 2 )]
-margin_left = 128.0
-margin_top = 320.0
-margin_right = 192.0
-margin_bottom = 384.0
 
 [node name="BuildSpot90" parent="." instance=ExtResource( 2 )]
-margin_left = 128.0
-margin_top = 256.0
-margin_right = 192.0
-margin_bottom = 320.0
 
 [node name="BuildSpot91" parent="." instance=ExtResource( 2 )]
-margin_left = 128.0
-margin_top = 192.0
-margin_right = 192.0
-margin_bottom = 256.0
 
 [node name="BuildSpot92" parent="." instance=ExtResource( 2 )]
-margin_left = 64.0
-margin_top = 192.0
-margin_right = 128.0
-margin_bottom = 256.0
 
 [node name="BuildSpot93" parent="." instance=ExtResource( 2 )]
-margin_left = 64.0
-margin_top = 256.0
-margin_right = 128.0
-margin_bottom = 320.0
 
 [node name="BuildSpot94" parent="." instance=ExtResource( 2 )]
-margin_left = 64.0
-margin_top = 320.0
-margin_right = 128.0
-margin_bottom = 384.0
 
 [node name="BuildSpot95" parent="." instance=ExtResource( 2 )]
-margin_left = 64.0
-margin_top = 384.0
-margin_right = 128.0
-margin_bottom = 448.0
 
 [node name="BuildSpot96" parent="." instance=ExtResource( 2 )]
-margin_left = 64.0
-margin_top = 448.0
-margin_right = 128.0
-margin_bottom = 512.0
 
 [node name="BuildSpot97" parent="." instance=ExtResource( 2 )]
-margin_left = 64.0
-margin_top = 512.0
-margin_right = 128.0
-margin_bottom = 576.0
 
 [node name="BuildSpot98" parent="." instance=ExtResource( 2 )]
-margin_top = 512.0
-margin_bottom = 576.0
 
 [node name="BuildSpot99" parent="." instance=ExtResource( 2 )]
-margin_top = 448.0
-margin_bottom = 512.0
 
 [node name="BuildSpot100" parent="." instance=ExtResource( 2 )]
-margin_top = 384.0
-margin_bottom = 448.0
 
 [node name="BuildSpot101" parent="." instance=ExtResource( 2 )]
-margin_top = 320.0
-margin_bottom = 384.0
 
 [node name="BuildSpot102" parent="." instance=ExtResource( 2 )]
-margin_top = 256.0
-margin_bottom = 320.0
 
 [node name="BuildSpot103" parent="." instance=ExtResource( 2 )]
-margin_top = 192.0
-margin_bottom = 256.0
 
 [node name="BuildSpot65" parent="." instance=ExtResource( 2 )]
-margin_left = 576.0
-margin_top = 320.0
-margin_right = 640.0
-margin_bottom = 384.0
 
 [node name="BuildSpot66" parent="." instance=ExtResource( 2 )]
-margin_left = 768.0
-margin_top = 512.0
-margin_right = 832.0
-margin_bottom = 576.0
 
 [node name="BuildSpot67" parent="." instance=ExtResource( 2 )]
-margin_left = 704.0
-margin_top = 512.0
-margin_right = 768.0
-margin_bottom = 576.0
 
 [node name="BuildSpot68" parent="." instance=ExtResource( 2 )]
-margin_left = 576.0
-margin_top = 256.0
-margin_right = 640.0
-margin_bottom = 320.0
 
 [node name="BuildSpot69" parent="." instance=ExtResource( 2 )]
-margin_left = 576.0
-margin_top = 192.0
-margin_right = 640.0
-margin_bottom = 256.0
 
 [node name="BuildSpot70" parent="." instance=ExtResource( 2 )]
-margin_left = 640.0
-margin_top = 512.0
-margin_right = 704.0
-margin_bottom = 576.0
 
 [node name="BuildSpot71" parent="." instance=ExtResource( 2 )]
-margin_left = 576.0
-margin_top = 512.0
-margin_right = 640.0
-margin_bottom = 576.0
 
 [node name="BuildSpot72" parent="." instance=ExtResource( 2 )]
-margin_left = 576.0
-margin_top = 128.0
-margin_right = 640.0
-margin_bottom = 192.0
 
 [node name="FlyPath" type="Path2D" parent="."]
 curve = SubResource( 5 )

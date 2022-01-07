@@ -6,6 +6,7 @@
 [ext_resource path="res://textures/towerB.png" type="Texture" id=5]
 
 [node name="BuildSpot" type="Node2D"]
+position = Vector2( -32, -32 )
 z_index = 2
 script = ExtResource( 3 )
 
