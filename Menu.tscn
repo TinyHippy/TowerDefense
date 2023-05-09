@@ -18,6 +18,7 @@ grow_vertical = 0
 margin_right = 63.0
 margin_bottom = 20.0
 grow_vertical = 0
+focus_neighbour_top = NodePath("../Quit")
 text = "Start"
 
 [node name="Option" type="Button" parent="VBoxContainer"]
@@ -32,6 +33,7 @@ margin_top = 48.0
 margin_right = 63.0
 margin_bottom = 68.0
 grow_vertical = 0
+focus_neighbour_bottom = NodePath("../Start")
 text = "Quit"
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_Start_pressed"]
