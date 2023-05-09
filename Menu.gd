@@ -22,3 +22,8 @@ func _on_Start_pressed():
 
 func _on_Quit_pressed():
 	get_tree().quit()
+
+
+func _on_Option_pressed():
+	var options = load("res://Options.tscn").instance()
+	get_tree().current_scene.add_child(options)
