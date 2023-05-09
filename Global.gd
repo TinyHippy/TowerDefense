@@ -17,6 +17,7 @@ var buildNode
 func _ready():
 	var root = get_tree().get_root()
 	currentLevel = root.get_child( root.get_child_count()-1)
+	print(currentLevel,root.name)
 	#pre load enemies and towers
 	enemyScenes["Enemy-a"] = preload("res://Enemy-a.tscn")
 	enemyScenes["Enemy-b"] = preload("res://Enemy-b.tscn")
