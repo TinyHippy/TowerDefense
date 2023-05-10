@@ -17,7 +17,9 @@ func _ready():
 
 
 func _on_Start_pressed():
-	get_tree().change_scene("res://Main.tscn")
+	if(get_tree().change_scene("res://Main.tscn") == 0):
+		pass
+
 
 
 func _on_Quit_pressed():
