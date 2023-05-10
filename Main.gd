@@ -12,7 +12,7 @@ var spawnTime = 0
 var building = false
 
 #Level Variables
-var levelName = ""
+var nextLevelName = Global.getLevel()
 var level = null
 
 #Wave Variables and arrays
@@ -35,11 +35,27 @@ export (PackedScene) var Enemy
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	global = Global
-	startLevel()
 	
-	# Loads level if level is blank must be levelOne
-	if (levelName == ""):
-		levelName = "level-01"
+
+	print(global.getLevel())
+	#loadLevel(nextLevelName)
+	loadLevel("level-02")
+	startLevel()
+
+
+
+func _process(delta):
+	waveSpawner(delta)
+
+
+func _input(event):
+	if Input.is_action_pressed("ui_cancel"):
+		var options = load("res://Options.tscn").instance()
+		get_tree().current_scene.add_child(options)
+		
+
+func loadLevel(levelName):
+	
 	var scene = ResourceLoader.load("res://"+levelName+".tscn")
 	level = scene.instance()
 	add_child(level)
@@ -56,14 +72,6 @@ func _ready():
 	initWave(0)
 	set_process(true)
 	set_process_input(true)
-		
-	
-
-
-
-func _process(delta):
-	waveSpawner(delta)
-
 
 
 func startLevel():

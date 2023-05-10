@@ -17,6 +17,7 @@ func _ready():
 
 
 func _on_Start_pressed():
+	#was getting c++ error for not using returned value so
 	if(get_tree().change_scene("res://Main.tscn") == 0):
 		pass
 

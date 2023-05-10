@@ -1,6 +1,6 @@
 extends Node
 
-var currentLevel = null
+var currentLevel = "level-01"
 var test = "test"
 var building = false
 
@@ -24,6 +24,12 @@ func _ready():
 	towerScenes["TowerA"] = preload("res://TowerA.tscn")
 	buildNode = preload("res://BuildSpot.tscn")
 	# towerScenes["TowerB"] = preload("res://TowerB.tscn")
+
+func getLevel():
+	return str(currentLevel)
+
+func changeLevelName(name):
+	currentLevel = str(name)
 	
 # getter and setters for vars
 func changeMoney(amount):

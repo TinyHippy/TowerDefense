@@ -70,4 +70,5 @@ margin_bottom = 64.0
 text = "X"
 
 [connection signal="toggled" from="VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_toggled"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button2" to="." method="_on_Button2_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitOptions" to="." method="_on_ExitOptions_pressed"]
