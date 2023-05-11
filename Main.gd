@@ -34,12 +34,11 @@ export (PackedScene) var Enemy
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	global = Global
+	global = get_node("/root/Global")
 	
 
-	print(global.getLevel())
-	#loadLevel(nextLevelName)
-	loadLevel("level-02")
+	print(global.currentLevel)
+	loadLevel(nextLevelName)
 	startLevel()
 
 

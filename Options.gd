@@ -23,10 +23,10 @@ func _on_ExitOptions_pressed():
 func _on_Button_toggled(button_pressed):
 	if(button_pressed):
 		$VBoxContainer/HBoxContainer/Button.text = "Off"
-		Global.changeLevelName("level-02")
+		Global.changeLevelName("level-01")
 	else:
 		$VBoxContainer/HBoxContainer/Button.text = "On"
-		Global.changeLevelName("level-01")
+		Global.changeLevelName("level-02")
 
 
 
