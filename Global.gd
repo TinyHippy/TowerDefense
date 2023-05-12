@@ -4,6 +4,8 @@ var currentLevel = "level-01"
 var test = "test"
 var building = false
 
+var optionOpen = false
+
 #Player Variables
 var money = 10
 var playerHealth = 5

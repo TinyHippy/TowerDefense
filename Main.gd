@@ -7,7 +7,9 @@ var global
 #Time Variables
 var time = 0
 var timeLabel = 0
-var nextWave = 5
+var nextWave = 12
+var readyStage = true
+var aSide = false
 var spawnTime = 0
 var building = false
 
@@ -36,8 +38,6 @@ export (PackedScene) var Enemy
 func _ready():
 	global = get_node("/root/Global")
 	
-
-	print(global.currentLevel)
 	loadLevel(nextLevelName)
 	startLevel()
 
@@ -68,16 +68,27 @@ func loadLevel(levelName):
 	if !(d):
 		print("Failed to parse wave json file")
 	waves = d["waves"]
+	loadAudio(levelName)
 	initWave(0)
 	set_process(true)
 	set_process_input(true)
 
-
+func loadAudio(lvlName):
+	print("res://sound/"+lvlName+"/"+lvlName+"-t0.mp3")
+	$SoundTrackIntro.stream = load("res://sound/"+lvlName+"/"+lvlName+"-t0.mp3")
+	$SoundTrackA.stream = load("res://sound/"+lvlName+"/"+lvlName+"-t1.mp3")
+	$SoundTrackA.stream.set_loop(false)
+	$SoundTrackB.stream = load("res://sound/"+lvlName+"/"+lvlName+"-t2.mp3")
+	$SoundTrackB.stream.set_loop(false)
+	$SoundTrackC.stream = load("res://sound/"+lvlName+"/"+lvlName+"-t3.mp3")
+	$SoundTrackC.stream.set_loop(false)
+	
 func startLevel():
 	$"/root/Global".playerHealth = 100
 	$LevelTimer.start()
 	$WaveTimer.start()
 	$HUD/Health.text = str($"/root/Global".playerHealth)
+	$SoundTrackIntro.play()
 
 func _on_LevelTimer_timeout():
 	timeLabel += 1
@@ -87,6 +98,10 @@ func _on_LevelTimer_timeout():
 func _on_WaveTimer_timeout():
 	
 	if(nextWave == 0):
+		if(readyStage):
+			$SoundTrackIntro.stop()
+			$SoundTrackA.play()
+			readyStage = false
 		nextWave = 30
 	else: 
 		nextWave -= 1
@@ -149,3 +164,26 @@ func waveSpawner(delta):
 
 
 
+
+
+
+
+
+
+
+
+func _on_SoundTrackA_finished():
+	print("T1Over")
+	$SoundTrackA.stop()
+	$SoundTrackB.play()
+
+
+
+func _on_SoundTrackB_finished():
+	$SoundTrackB.stop()
+	$SoundTrackC.play()
+
+
+func _on_SoundTrackC_finished():
+	$SoundTrackC.stop()
+	print("LevelOver")

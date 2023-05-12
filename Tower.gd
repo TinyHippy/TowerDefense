@@ -23,7 +23,7 @@ func _process(_delta):
 	if (target != null):
 		var angleTo = $TowerRange.get_global_position().angle_to_point(target.get_global_position())
 		#$Sprite.rotation = $TowerRange.get_global_position().angle_to_point(target.get_global_position())
-		print(angleTo)
+		#print(angleTo)
 		if angleTo > 0 and angleTo < PI/2:
 			$Sprite.texture = uL
 		elif angleTo > -PI and angleTo < -PI/2:

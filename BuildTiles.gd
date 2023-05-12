@@ -27,7 +27,7 @@ func _ready():
 
 func _input(event):
 	
-	if event is InputEventMouseButton and global.building == false:
+	if event is InputEventMouseButton and global.building == false and global.optionOpen == false:
 		if event.get_button_index() == 1:
 			buildSpot = global.buildNode
 			var newBuild = buildSpot.instance()
