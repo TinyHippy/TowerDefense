@@ -38,7 +38,8 @@ func _ready():
 	
 
 	print(global.currentLevel)
-	loadLevel(nextLevelName)
+	loadLevel("level-03")
+	#loadLevel(nextLevelName)
 	startLevel()
 
 

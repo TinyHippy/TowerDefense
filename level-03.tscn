@@ -11,7 +11,7 @@ _data = {
 
 [sub_resource type="Curve2D" id=5]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 69, 993, 0, 0, 0, 0, 619.07, 586.674, 0, 0, 0, 0, 924.769, 412.535, 0, 0, 0, 0, 1376.71, 139.535, 0, 0, 0, 0, 1706, -21 )
+"points": PoolVector2Array( 0, 0, 0, 0, 124.667, 7.11631, 0, 0, 0, 0, 1037.04, 395.304 )
 }
 
 [node name="level-01" type="Node2D"]
@@ -40,7 +40,6 @@ script = ExtResource( 2 )
 curve = SubResource( 4 )
 
 [node name="FlyPath" type="Path2D" parent="BuildTiles"]
-visible = false
 position = Vector2( -102.131, 2.15384 )
 scale = Vector2( 1.05987, 1.10256 )
 curve = SubResource( 5 )
