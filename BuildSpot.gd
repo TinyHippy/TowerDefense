@@ -1,6 +1,6 @@
 extends Node
 
-onready var global = get_node("/root/Global")
+@onready var global = get_node("/root/Global")
 
 
 
@@ -48,7 +48,7 @@ func _on_HideTimer_timeout():
 
 func _on_TowerABuild_pressed():
 	var scene  = global.towerScenes["TowerA"]
-	var towerInst = scene.instance()
+	var towerInst = scene.instantiate()
 	$Centre.add_child(towerInst)
 	global.building = false
 	hideAll()

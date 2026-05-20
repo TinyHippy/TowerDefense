@@ -1,62 +1,48 @@
-extends TileMap
+extends TileMapLayer
 
 const BUILDABLE = "buildable"
 const BUILDABLE_TYPE = 2
 const MOUSE_OVER = 5
 const ACTIVE = "active"
-var currMouseOver = Vector2(0,0)
-var lastMouseOver = Vector2(-1,-1)
+
+var currMouseOver = Vector2i(0, 0)
+var lastMouseOver = Vector2i(-1, -1)
+
 var worldPos
 var tilePos
 var tileId
 var tileName
 var buildSpot
 var buildInst
-onready var global = get_node("/root/Global")
 
+@onready var global = get_node("/root/Global")
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	buildSpot = global.buildNode
-	buildInst = buildSpot.instance()
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	buildInst = buildSpot.instantiate()
 
 func _input(event):
-	
-	if event is InputEventMouseButton and global.building == false:
-		if event.get_button_index() == 1:
-			buildSpot = global.buildNode
-			var newBuild = buildSpot.instance()
-			add_child(newBuild)
-#			print("Node name: ", get_node("."))
-#			print("Mouse click/unclick at:", event.position)
+	if event is InputEventMouseButton and not global.building:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			worldPos = event.position
-			tilePos = world_to_map(worldPos)
-			tileId = get_cellv(tilePos)
-			if tileId != -1:
-				tileName = get_node(".").get_tileset().tile_get_name(tileId)
-			#checking for click on buildable tile
-				if tileName == ACTIVE or tileName == BUILDABLE:
-					var adjust = cell_size
-					adjust = adjust / Vector2(4,2)
-					newBuild.position = map_to_world(tilePos)-adjust #adjust for tile size to centre
-					newBuild.showAll()
-					global.building = true
-	#				print("Tile pos is: ", tilePos)
-		#			print("Tile id is: ", tileId)
-		#			print("Tile name is: ", tileName)
-	# if the mouse moves do mouse over logic
-	elif event is InputEventMouseMotion:
-		currMouseOver = world_to_map(event.position)
-		if currMouseOver != lastMouseOver:
-			if get_cellv(currMouseOver) == BUILDABLE_TYPE and global.building == false:
-#				print("Mouse Motion at: ", world_to_map(event.position))
-				set_cellv(currMouseOver, MOUSE_OVER)
-				set_cellv(lastMouseOver, BUILDABLE_TYPE)
-				lastMouseOver = currMouseOver
-		## checking for mouse click
+			tilePos = local_to_map(worldPos)
+			tileId = get_cell_source_id(tilePos)
 
+			if tileId == BUILDABLE_TYPE or tileId == MOUSE_OVER:
+				var newBuild = global.buildNode.instantiate()
+				add_child(newBuild)
+				var cell_size = Vector2(tile_set.tile_size)
+				var adjust = cell_size / Vector2(4, 2)
+				newBuild.position = map_to_local(tilePos) - adjust
+				newBuild.showAll()
+				global.building = true
+
+	elif event is InputEventMouseMotion:
+		currMouseOver = local_to_map(event.position)
+
+		# Ensure lastMouseOver is also Vector2i for correct comparison
+		if lastMouseOver != currMouseOver:
+			if get_cell_source_id(currMouseOver) == BUILDABLE_TYPE and not global.building:
+				set_cell(currMouseOver, MOUSE_OVER, Vector2i(0, 0), 0)  # FIXED: Corrected argument order
+				set_cell(lastMouseOver, BUILDABLE_TYPE, Vector2i(0, 0), 0)  # FIXED: Corrected argument order
+				lastMouseOver = currMouseOver  # Ensure lastMouseOver is a Vector2i

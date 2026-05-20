@@ -18,7 +18,7 @@ func _ready():
 
 func _on_Start_pressed():
 	#was getting c++ error for not using returned value so
-	if(get_tree().change_scene("res://Main.tscn") == 0):
+	if(get_tree().change_scene_to_file("res://Main.tscn") == 0):
 		pass
 
 
@@ -28,5 +28,5 @@ func _on_Quit_pressed():
 
 
 func _on_Option_pressed():
-	var options = load("res://Options.tscn").instance()
+	var options = load("res://Options.tscn").instantiate()
 	get_tree().current_scene.add_child(options)
