@@ -1,93 +1,75 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://c3ugdkbnllb62"]
 
-[ext_resource path="res://textures/towerBase-Hover.png" type="Texture" id=2]
-[ext_resource path="res://BuildSpot.gd" type="Script" id=3]
-[ext_resource path="res://textures/towerA.png" type="Texture" id=4]
-[ext_resource path="res://textures/towerB.png" type="Texture" id=5]
+[ext_resource type="Texture2D" uid="uid://bwbkagvmdc4im" path="res://textures/towerBase-Hover.png" id="2"]
+[ext_resource type="Script" path="res://BuildSpot.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://qctfh8sx5fpl" path="res://textures/towerA.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://dop14xsytm8bn" path="res://textures/towerB.png" id="5"]
 
 [node name="BuildSpot" type="Node2D"]
-position = Vector2( -32, -32 )
 z_index = 2
-script = ExtResource( 3 )
+position = Vector2(-32, -32)
+script = ExtResource("3")
 
 [node name="TowerABuild" type="TextureButton" parent="."]
-margin_left = -24.0
-margin_top = -16.0
-margin_right = 40.0
-margin_bottom = 48.0
-rect_scale = Vector2( 0.5, 0.5 )
-texture_normal = ExtResource( 4 )
-texture_hover = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+offset_left = -24.0
+offset_top = -16.0
+offset_right = 40.0
+offset_bottom = 48.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("4")
+texture_hover = ExtResource("2")
 
 [node name="TowerBBuild" type="TextureButton" parent="."]
-margin_top = -40.0
-margin_right = 64.0
-margin_bottom = 24.0
-rect_scale = Vector2( 0.5, 0.5 )
-rect_pivot_offset = Vector2( 32, 16 )
-texture_normal = ExtResource( 5 )
-texture_hover = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+offset_top = -40.0
+offset_right = 64.0
+offset_bottom = 24.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(32, 16)
+texture_normal = ExtResource("5")
+texture_hover = ExtResource("2")
 
 [node name="TowerCBuild" type="TextureButton" parent="."]
-margin_left = 48.0
-margin_top = -24.0
-margin_right = 112.0
-margin_bottom = 40.0
-rect_scale = Vector2( 0.5, 0.5 )
-rect_pivot_offset = Vector2( 32, 16 )
-texture_normal = ExtResource( 5 )
-texture_hover = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+offset_left = 48.0
+offset_top = -24.0
+offset_right = 112.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(32, 16)
+texture_normal = ExtResource("5")
+texture_hover = ExtResource("2")
 
 [node name="TowerDBuild" type="TextureButton" parent="."]
-margin_left = 64.0
-margin_top = 48.0
-margin_right = 128.0
-margin_bottom = 112.0
-rect_scale = Vector2( 0.5, 0.5 )
-texture_normal = ExtResource( 4 )
-texture_hover = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+offset_left = 64.0
+offset_top = 48.0
+offset_right = 128.0
+offset_bottom = 112.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("4")
+texture_hover = ExtResource("2")
 
 [node name="TowerEBuild" type="TextureButton" parent="."]
-margin_left = 16.0
-margin_top = 64.0
-margin_right = 80.0
-margin_bottom = 128.0
-rect_scale = Vector2( 0.5, 0.5 )
-texture_normal = ExtResource( 4 )
-texture_hover = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+offset_left = 16.0
+offset_top = 64.0
+offset_right = 80.0
+offset_bottom = 128.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("4")
+texture_hover = ExtResource("2")
 
 [node name="TowerFBuild" type="TextureButton" parent="."]
-margin_left = -24.0
-margin_top = 48.0
-margin_right = 40.0
-margin_bottom = 112.0
-rect_scale = Vector2( 0.5, 0.5 )
-texture_normal = ExtResource( 4 )
-texture_hover = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+offset_left = -24.0
+offset_top = 48.0
+offset_right = 40.0
+offset_bottom = 112.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("4")
+texture_hover = ExtResource("2")
 
 [node name="HideTimer" type="Timer" parent="."]
 wait_time = 3.0
 
 [node name="Centre" type="Node2D" parent="."]
-position = Vector2( 32, 32 )
+position = Vector2(32, 32)
 
 [connection signal="pressed" from="TowerABuild" to="." method="_on_TowerABuild_pressed"]
 [connection signal="pressed" from="TowerBBuild" to="." method="_on_TowerBBuild_pressed"]

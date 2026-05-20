@@ -28,8 +28,8 @@ func _ready():
 func getLevel():
 	return str(currentLevel)
 
-func changeLevelName(name):
-	currentLevel = str(name)
+func changeLevelName(level_name):
+	currentLevel = str(level_name)
 	
 # getter and setters for vars
 func changeMoney(amount):

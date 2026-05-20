@@ -12,8 +12,9 @@ var spawnTime = 0
 var building = false
 
 #Level Variables
-var nextLevelName = Global.getLevel()
+var nextLevelName = ""
 var level = null
+var gameOver = false
 
 #Wave Variables and arrays
 var maxEnemies = 12
@@ -25,7 +26,7 @@ const WAIT = 0
 const ACTIVE = 1
 const FINISHED = 2
 
-export (PackedScene) var Enemy
+@export var Enemy: PackedScene
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -35,8 +36,7 @@ export (PackedScene) var Enemy
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	global = get_node("/root/Global")
-	
-
+	nextLevelName = global.getLevel()
 	print(global.currentLevel)
 	loadLevel(nextLevelName)
 	startLevel()
@@ -44,27 +44,46 @@ func _ready():
 
 
 func _process(delta):
+	if gameOver:
+		return
+	if global.playerHealth <= 0:
+		endGame("DEFEAT")
+		return
+	$HUD/Health.text = str(global.playerHealth)
 	waveSpawner(delta)
 
 
-func _input(event):
-	if Input.is_action_pressed("ui_cancel"):
-		var options = load("res://Options.tscn").instance()
+func endGame(message):
+	gameOver = true
+	$LevelTimer.stop()
+	$WaveTimer.stop()
+	$HUD/LevelTimer.text = message
+	set_process(false)
+
+
+func _unhandled_input(event):
+	if event.is_action_pressed("ui_cancel"):
+		if get_tree().current_scene.has_node("Options"):
+			return
+		var options = load("res://Options.tscn").instantiate()
+		options.name = "Options"
 		get_tree().current_scene.add_child(options)
 		
 
 func loadLevel(levelName):
 	
 	var scene = ResourceLoader.load("res://"+levelName+".tscn")
-	level = scene.instance()
+	level = scene.instantiate()
 	add_child(level)
 	move_child(level,0)
 	
 	# Load wave data
-	var jsonFile = File.new()
-	jsonFile.open("res://"+ levelName + "-waves.json", File.READ)
+	
+	var jsonFile = FileAccess.open("res://"+levelName+"-waves.json", FileAccess.READ)
 	var text = jsonFile.get_as_text()	
-	var d = parse_json(text)
+	var test_json_conv = JSON.new()
+	test_json_conv.parse(text)
+	var d = test_json_conv.get_data()
 	if !(d):
 		print("Failed to parse wave json file")
 	waves = d["waves"]
@@ -107,7 +126,7 @@ func startWave():
 	wave["state"] = ACTIVE
 	var enemy = wave["enemies"][wave["index"]]
 	var scene  = global.enemyScenes[enemy["type"]]
-	var enemyInst = scene.instance()
+	var enemyInst = scene.instantiate()
 	spawnTime = time + enemyInst.spawnInterval
 	
 
@@ -122,14 +141,14 @@ func waveSpawner(delta):
 		if time > spawnTime:
 			var enemy = wave["enemies"][wave["index"]]
 			var scene  = global.enemyScenes[enemy["type"]]
-			var enemyInst = scene.instance()
+			var enemyInst = scene.instantiate()
 			var path = PathFollow2D.new()
 
 			path.set_loop(false)
 			var pathName = enemyInst.path
 			#var pathDistance = level.get_node(pathName).curve.get_baked_length()
 			#print (pathName)
-			level.get_node("BuildTiles").get_node(pathName).add_child(path)
+			level.get_node(pathName).add_child(path)
 			path.add_child(enemyInst)
 			if(wave["index"]+1) < wave["count"]:
 				wave["index"] += 1
@@ -138,6 +157,9 @@ func waveSpawner(delta):
 				wave["state"] = FINISHED
 				if(waveIndex+1) < waves.size():
 					initWave(waveIndex+1)
+					nextWave = 30
+				else:
+					endGame("VICTORY")
 	elif wave["state"] == WAIT:
 		#print("WAIT WAVE")
 		
@@ -146,6 +168,3 @@ func waveSpawner(delta):
 		else:
 			startWave()
 	
-
-
-
